@@ -689,3 +689,18 @@ def create_folder(path='./new'):
     if os.path.exists(path):
         shutil.rmtree(path)  # delete output folder
     os.makedirs(path)  # make new output folder
+
+if __name__ == '__main__':
+    train_path = None,
+    imgsz = 608,
+    batch_size = 64,
+    gs = 32,
+    opt = None,
+    hyp = None,
+    augment = True,
+    cache = None,
+    rect = True,
+    local_rank = 0, # opt.global_rank -> dist.getrank() -> return the rank of current process group
+    world_size = None
+
+    dataloader, dataset = create_dataloader()
